@@ -1,6 +1,6 @@
 <?php
 
-namespace LuckyMiner;
+namespace esh123unicorn;
 
 use pocketmine\Server;
 use pocketmine\Player;
