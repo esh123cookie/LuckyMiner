@@ -25,15 +25,14 @@ class Main extends PluginBase implements Listener{
 	       $this->getLogger()->info("Plugin enabled");
 	}
 
-	// Thanks to @PrimusLV
-	public static function onBlockBreak(BlockBreakEvent $event){
+    public function onBreak(BlockBreakEvent $event) : void {
 	   if($event->isCancelled()) return;
 	   $name = $event->getPlayer()->getName();
 	   $player = $event->getPlayer();
 	      if(self::$breaks[$name] >= 128){
 	         $event->getPlayer()->sendTitle(TF::YELLOW . "You broke 128 blocks");
                  $player->addEffect(new EffectInstance(Effect::getEffect(Effect::Haste), (1 * 30), (1), (false)));
-	         self::$breaks[$name] = 0; # Reset the counter, to avoid ^^ spam.
+	         self::$breaks[$name] = 0;
 	      }else{
 	        self::$breaks[$name]++;
 	      }
