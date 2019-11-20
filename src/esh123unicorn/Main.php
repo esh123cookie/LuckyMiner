@@ -22,7 +22,7 @@ class Main extends PluginBase implements Listener{
 	    $this->getServer()->getPluginManager()->registerEvents($this, $this);
 		    @mkdir($this->getDataFolder());
 	       # Config isn't used.
-	       $this->getLogger()->info("Plugin enabled"); # Don't add this log message at beggining of function it can be misleading
+	       $this->getLogger()->info("Plugin enabled");
 	}
 
 	// Thanks to @PrimusLV
@@ -32,7 +32,7 @@ class Main extends PluginBase implements Listener{
 	   $player = $event->getPlayer();
 	      if(self::$breaks[$name] >= 128){
 	         $event->getPlayer()->sendTitle(TF::YELLOW . "You broke 128 blocks");
-	         self::giveEffect($player, 3, 100, 5);
+                 $player->addEffect(new EffectInstance(Effect::getEffect(Effect::Haste), (1 * 30), (1), (false)));
 	         self::$breaks[$name] = 0; # Reset the counter, to avoid ^^ spam.
 	      }else{
 	        self::$breaks[$name]++;
@@ -46,7 +46,6 @@ class Main extends PluginBase implements Listener{
 	 * @param int $amplifier
 	 */
 	public static function giveEffect(Player $player, $id, $duration, $amplifier){
-		$effect = Effect::getEffect($id)->setDuration($duration)->setAmplifier($amplifier);
 		$player->addEffect($effect);
 	}
 }
