@@ -1,5 +1,6 @@
 name: LuckyMiner
+version: 1.5.9
+api: [3.9.3, 4.0.0]
 main: esh123unicorn\Main
-version: 1.0.0
-api: [1.13.1, 2.0.0, 3.0.0, 3.9.7, 4.0.0]
-author: esh123unicorn
+author: esh123cookie
+
