@@ -1,6 +1,6 @@
 <?php
 
-namespace Muqsit;
+namespace LuckyMiner;
 
 use pocketmine\Server;
 use pocketmine\Player;
@@ -22,7 +22,7 @@ class Main extends PluginBase implements Listener{
 	    $this->getServer()->getPluginManager()->registerEvents($this, $this);
 		    @mkdir($this->getDataFolder());
 	       # Config isn't used.
-	       $this->getLogger()->info("enabled"); # Don't add this log message at beggining of function it can be misleading
+	       $this->getLogger()->info("Plugin enabled"); # Don't add this log message at beggining of function it can be misleading
 	}
 
 	// Thanks to @PrimusLV
@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
 	   $name = $event->getPlayer()->getName();
 	   $player = $event->getPlayer();
 	      if(self::$breaks[$name] >= 128){
-	         $event->getPlayer()->sendMessage(TF::YELLOW . "You broke 128 blocks, " . TF::AQUA . "WHOOOO!");
+	         $event->getPlayer()->sendTitle(TF::YELLOW . "You broke 128 blocks");
 	         self::giveEffect($player, 3, 100, 5);
 	         self::$breaks[$name] = 0; # Reset the counter, to avoid ^^ spam.
 	      }else{
@@ -46,7 +46,7 @@ class Main extends PluginBase implements Listener{
 	 * @param int $amplifier
 	 */
 	public static function giveEffect(Player $player, $id, $duration, $amplifier){
-		$effect = Effect::getEffect($id)->setDuration($duration)->setAmplifier($amplifier); # Fluent setters <3
+		$effect = Effect::getEffect($id)->setDuration($duration)->setAmplifier($amplifier);
 		$player->addEffect($effect);
 	}
 }
