@@ -29,11 +29,11 @@ class Main extends PluginBase implements Listener{
     public function onBreak(BlockBreakEvent $event) : void {
 	   if($event->isCancelled()) return;
 	   $name = $event->getPlayer()->getName();
-	   $item = Item::get(Item::STONE);
+	   $itemname = Item::get(Item::DIRT);
 	   $player = $event->getPlayer();
 		foreach($event->getDrops() as $drop) {
 			if(!$player->getInventory()->canAddItem($drop)) 
-	      			if ($event->$drop[$name][$item] >= 128){
+	      			if ($event->$drop[$name][$itemname] >= 128){
 	         		   $event->getPlayer()->sendTitle(TF::YELLOW . "You broke 128 blocks");
                  		   $player->addEffect(new EffectInstance(Effect::getEffect(Effect::Haste), (1 * 30), (1), (false)));
 	         		   self::$breaks[$name] = 0;
