@@ -37,10 +37,11 @@ class Main extends PluginBase implements Listener{
 	         		   self::$breaks[$name] = 0;
 	      		     	}else{
 	        		   self::$breaks[$name]++;
-	      			}
-			}
-   	}
-	
+	      			   }
+			  }
+   		  }
+	  }		
+
 	/**
 	 * @param Player $player
 	 * @param int $id
