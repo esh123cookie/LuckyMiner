@@ -50,4 +50,3 @@ class Main extends PluginBase implements Listener{
 		$player->addEffect($effect);
 	}
 }
-}
