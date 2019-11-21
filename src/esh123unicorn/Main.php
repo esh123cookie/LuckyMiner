@@ -11,6 +11,7 @@ use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\utils\Config;
 use pocketmine\item\Item;
+use pocketmine\block\Dirt
 use pocketmine\utils\TextFormat as TF;
 
 class Main extends PluginBase implements Listener{
@@ -28,7 +29,7 @@ class Main extends PluginBase implements Listener{
     public function onBreak(BlockBreakEvent $event) : void {
 	   if($event->isCancelled()) return;
 	   $name = $event->getPlayer()->getName();
-	   $item = $event->getBlock()->getBlockName();
+	   $item = Item::get(Item::STONE);
 	   $player = $event->getPlayer();
 		foreach($event->getDrops() as $drop) {
 			if(!$player->getInventory()->canAddItem($drop)) 
