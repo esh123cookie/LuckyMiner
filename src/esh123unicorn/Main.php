@@ -33,7 +33,7 @@ class Main extends PluginBase implements Listener{
 	   $item = Item::get(Item::DIRT);
 	   $player = $event->getPlayer();
 		foreach($event->getDrops() as $drop) {
-	      			if ($event->$drop[$name]::$Item Dirt >= 128){
+	      			if ($event->$drop[$name][$Item Dirt] >= 128){
 	         		   $event->getPlayer()->sendTitle(TF::YELLOW . "You broke 128 blocks");
                  		   $player->addEffect(new EffectInstance(Effect::getEffect(Effect::Haste), (1 * 30), (1), (false)));
 	         		   self::$breaks[$name] = 0;
