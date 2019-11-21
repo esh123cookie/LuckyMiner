@@ -12,6 +12,7 @@ use pocketmine\command\ConsoleCommandSender;
 use pocketmine\utils\Config;
 use pocketmine\item\Item;
 use pocketmine\block\Dirt;
+use pocketmine\block\Stone;
 use pocketmine\utils\TextFormat as TF;
 
 class Main extends PluginBase implements Listener{
