@@ -29,7 +29,7 @@ class Main extends PluginBase implements Listener{
 	   if($event->isCancelled()) return;
 	   $name = $event->getPlayer()->getName();
 	   $player = $event->getPlayer();
-	   	foreach($event->getItemId() as $item) {
+	   	foreach($event->getItem() as $item) {
 		foreach($event->getDrops() as $drop) {
 			if(!$player->getInventory()->canAddItem($drop)) 
 	      			if ($event->$drop[$item] >= 128){
