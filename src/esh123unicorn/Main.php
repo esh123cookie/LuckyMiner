@@ -38,7 +38,8 @@ class Main extends PluginBase implements Listener{
 	      		     	}else{
 	        		   self::$breaks[$name]++;
 	      			   }
-			  }	
+			  }
+   	}	
 	/**
 	 * @param Player $player
 	 * @param int $id
