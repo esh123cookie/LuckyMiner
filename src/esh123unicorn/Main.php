@@ -30,7 +30,7 @@ class Main extends PluginBase implements Listener{
     public function onBreak(BlockBreakEvent $event) : void {
 	   if($event->isCancelled()) return;
 	   $name = $event->getPlayer()->getName();
-	   $item = (Item::get(3));
+	   $item = Item::get(Item);
 	   $player = $event->getPlayer();
 		foreach($event->getDrops() as $drop) {
 	      			if ($event->$drop[$name][$item] >= 128){
