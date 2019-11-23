@@ -27,7 +27,7 @@ class Main extends PluginBase implements Listener{
 	       $this->getLogger()->info("Plugin enabled");
 	}
 
-    public function onBreak(BlockBreakEvent $event) : void {
+	public function onBlockBreak(BlockBreakEvent $ev) : void {
 	   if($event->isCancelled()) return;
 	   $name = $event->getPlayer()->getName();
 	   $bl = $ev->getBlock();
