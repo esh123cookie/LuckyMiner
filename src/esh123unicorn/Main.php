@@ -27,10 +27,10 @@ class Main extends PluginBase implements Listener{
 	       $this->getLogger()->info("Plugin enabled");
 	}
 
-	public function onBlockBreak(BlockBreakEvent $ev) : void {
+	public function onBlockBreak(BlockBreakEvent $event) : void {
 	   if($event->isCancelled()) return;
 	   $name = $event->getPlayer()->getName();
-	   $bl = $ev->getBlock();
+	   $bl = $event->getBlock();
 	   $player = $event->getPlayer();
 		foreach($event->getDrops() as $drop) {
 	      			if ($event->$drop[$name][$bl->getId()] >= 128){
